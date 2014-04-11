@@ -1,4 +1,4 @@
--module(msgpack_test).
+-module(msgp_rec_test).
 -export([start/1]).
 -include("protocol_record.hrl").
 
