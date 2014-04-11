@@ -1,0 +1,12 @@
+{application, msgp_rec,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { msgp_rec_app, []}},
+  {env, []}
+ ]}.

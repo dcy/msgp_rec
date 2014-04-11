@@ -1,0 +1,13 @@
+message PositionInfo {
+    required int32 position = 1;
+    required int64 general_id = 2;
+}
+
+message FormationInfo {
+    required int32 formation_id = 1;
+    repeated PositionInfo positions = 2;
+}
+
+message SetFormation {
+    required FormationInfo formation_info = 1;
+}
