@@ -10,6 +10,7 @@ The best describe way must be record, so we should pack and unpack record.
 
 How can i use msgp_rec?
 -----------------------
+The code is "src/proto_gen.erl", here only server, if your client using c++, you can generated the c++ style.
 
 #### First:Define the protocol
 see "include/protocol_record.hrl"
