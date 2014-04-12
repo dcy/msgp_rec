@@ -42,28 +42,6 @@ gen_server_proto_erl(RecordTree) ->
             io:format("~s does not exist~n", [DstModFile])
     end.
 
-%gen_client_proto_h(RecordTypeL) ->
-%	Dst_module_file = lists:concat([?DST_MOD_DIR, ?DST_MOD_CLIENT, ".h"]),
-%	case file:open(Dst_module_file, write) of
-%		{ok, _S} ->
-%			gen_head_h(Dst_module_file),
-%			gen_body_h(Dst_module_file, RecordTypeL),
-%			gen_tail_h(Dst_module_file),
-%			io:format("generate client proto h finish~n");
-%		{error, enoent} ->
-%			io:format("~s does not exist~n", [Dst_module_file])
-%	end.
-%
-%gen_client_proto_cpp(RecordTypeL) ->
-%	Dst_module_file = lists:concat([?DST_MOD_DIR, ?DST_MOD_CLIENT, ".cpp"]),
-%	case file:open(Dst_module_file, write) of
-%		{ok, _S} ->
-%			gen_head_cpp(Dst_module_file),
-%			gen_body_cpp(Dst_module_file, RecordTypeL),
-%			io:format("generate client proto cpp finish~n");
-%		{error, enoent} ->
-%			io:format("~s does not exist~n", [Dst_module_file])
-%	end.
 
 gen_head(File) ->
     ModuleStr = io_lib:format("-module(~s).~n", [?DST_MOD]),
@@ -197,6 +175,28 @@ get_item_type_by_info(Info) ->
 
 %%% -------------------- CLIENT H -----------------------------------------
 %
+%gen_client_proto_h(RecordTypeL) ->
+%	Dst_module_file = lists:concat([?DST_MOD_DIR, ?DST_MOD_CLIENT, ".h"]),
+%	case file:open(Dst_module_file, write) of
+%		{ok, _S} ->
+%			gen_head_h(Dst_module_file),
+%			gen_body_h(Dst_module_file, RecordTypeL),
+%			gen_tail_h(Dst_module_file),
+%			io:format("generate client proto h finish~n");
+%		{error, enoent} ->
+%			io:format("~s does not exist~n", [Dst_module_file])
+%	end.
+%
+%gen_client_proto_cpp(RecordTypeL) ->
+%	Dst_module_file = lists:concat([?DST_MOD_DIR, ?DST_MOD_CLIENT, ".cpp"]),
+%	case file:open(Dst_module_file, write) of
+%		{ok, _S} ->
+%			gen_head_cpp(Dst_module_file),
+%			gen_body_cpp(Dst_module_file, RecordTypeL),
+%			io:format("generate client proto cpp finish~n");
+%		{error, enoent} ->
+%			io:format("~s does not exist~n", [Dst_module_file])
+%	end.
 %gen_head_h(File) ->
 %	file:write_file(File, "/**\n"),
 %	file:write_file(File, " * !!! DO NOT EDIT !!!\n", [append]),
