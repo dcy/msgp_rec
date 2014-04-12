@@ -15,12 +15,12 @@ How can i use msgp_rec?
 see "include/protocol_record.hrl"
 ```erlang
 -record(position_info, {position   :: integer(), % 位置
-			general_id :: integer()  % 武将id
-		       }).
+                        general_id :: integer()  % 武将id
+                       }).
 
--record(formation_info, {formation_id :: integer(),	        % 阵法id
-			 positions    :: list(#position_info{})	% 站位
-			}).
+-record(formation_info, {formation_id :: integer(),		% 阵法id
+                         positions    :: list(#position_info{})	% 站位
+                        }).
 
 %% ===========================阵法, 分类号:19=======================
 %% 19001 设置阵法
@@ -29,6 +29,7 @@ see "include/protocol_record.hrl"
 
 -record(set_formation_resp, {ret_code :: integer() 
                             }).
+
 ```
 
 ## Second: generate protocol, sh gen_protocol.sh
@@ -87,6 +88,7 @@ unpack(Other, Bin) ->
 ## Third:use `protocol:pack(xxx, XRec)` and `protocol:unpack(yyy, YBin)`
 
 Is it work efficiently?
+-----------------------
 let's see the difference between protobuff and msgp_rec:
 ## protobuff:
 See the protocol file "src/simple.proto", the same effect as protobuff_record.hrl, so not list the code here.
