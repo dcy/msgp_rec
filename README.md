@@ -7,6 +7,7 @@ msgpack-erlang for record
 [msgpack-erlang](https://github.com/msgpack/msgpack-erlang) can not pack erlang's record.
 But our client and server should communicate according the protocol file.
 The best describe way must be record, so we should pack and unpack record.
+why do i use protobuff? because msgpack is more efficient. we can see below.
 
 How can i use msgp_rec?
 -----------------------
