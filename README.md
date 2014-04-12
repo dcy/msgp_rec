@@ -13,7 +13,7 @@ How can i use msgp_rec?
 
 # First
 Define the protocol, see "include/protocol_record.hrl"
-`
+```erlang
 -record(position_info, {position   :: integer(), % 位置
 						general_id :: integer()  % 武将id
 					   }).
@@ -29,4 +29,4 @@ Define the protocol, see "include/protocol_record.hrl"
 
 -record(set_formation_resp, {ret_code :: integer() 
                             }).
-`
+```
